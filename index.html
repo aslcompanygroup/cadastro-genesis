@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Saúde 360 - Cadastro de Paciente</title>
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #001c70;
+            --secondary-blue: #0039d6;
+            --accent-gold: #c89b3c;
+            --accent-gold-hover: #af8125;
+            --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --header-gradient: linear-gradient(135deg, #001c70 0%, #0039d6 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-form {
+            border: none;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+        }
+
+        .cabecalho {
+            background: var(--header-gradient);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .logo-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 5px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .cabecalho h1 {
+            color: #ffffff;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .cabecalho p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #495057;
+            margin-bottom: 6px;
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-right: none;
+            color: var(--primary-blue);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .form-control {
+            border-left: none;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 0.65rem 0.75rem;
+            font-size: 0.95rem;
+            border-color: #ced4da;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--secondary-blue);
+        }
+
+        .input-group:focus-within .input-group-text {
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+        }
+
+        textarea.form-control {
+            border-left: 1px solid #ced4da;
+            border-radius: 10px !important;
+        }
+
+        textarea.form-control:focus {
+            border-color: var(--secondary-blue);
+        }
+
+        .btn-genesis {
+            background: var(--accent-gold);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(200, 155, 60, 0.3);
+        }
+
+        .btn-genesis:hover {
+            background: var(--accent-gold-hover);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(200, 155, 60, 0.4);
+        }
+
+        .rodape {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-4 py-md-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+
+            <div class="card card-form">
+
+                <!-- Cabeçalho -->
+                <div class="cabecalho">
+                    <div class="logo-container">
+                        <img src="logo.jpg" alt="Logo Genesis Saúde" onerror="this.src='https://via.placeholder.com/110?text=GENESIS'">
+                    </div>
+                    <h1>GENESIS SAÚDE 360</h1>
+                    <p>Cadastro de Pacientes</p>
+                </div>
+
+                <!-- Formulário -->
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- INSIRA SEU E-MAIL REAL ABAIXO -->
+                    <form action="https://formsubmit.co/aslcompany.sa@gmail.com" method="POST">
+
+                        <!-- Configurações para o FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Novo Cadastro - Genesis Saúde 360">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="row g-3">
+
+                            <!-- Nome Completo -->
+                            <div class="col-12">
+                                <label class="form-label">Nome Completo *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" class="form-control" name="Nome Completo" placeholder="Ex: João da Silva" required>
+                                </div>
+                            </div>
+
+                            <!-- CPF -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">CPF *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+                                    <input type="text" class="form-control" name="CPF" placeholder="000.000.000-00" required>
+                                </div>
+                            </div>
+
+                            <!-- Data de Nascimento -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Data de Nascimento *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                                    <input type="date" class="form-control" name="Data de Nascimento" required>
+                                </div>
+                            </div>
+
+                            <!-- Telefone -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Telefone / WhatsApp *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                    <input type="tel" class="form-control" name="Telefone" placeholder="(00) 00000-0000" required>
+                                </div>
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">E-mail</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                    <input type="email" class="form-control" name="Email do Paciente" placeholder="nome@exemplo.com">
+                                </div>
+                            </div>
+
+                            <!-- Endereço -->
+                            <div class="col-12">
+                                <label class="form-label">Endereço Completo</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                                    <input type="text" class="form-control" name="Endereço" placeholder="Rua, Número, Bairro">
+                                </div>
+                            </div>
+
+                            <!-- Cidade -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Cidade</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
+                                    <input type="text" class="form-control" name="Cidade" placeholder="Sua cidade">
+                                </div>
+                            </div>
+
+                            <!-- Convênio -->
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Convênio / Plano de Saúde</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-notes-medical"></i></span>
+                                    <input type="text" class="form-control" name="Convênio" placeholder="Particular ou Nome do Plano">
+                                </div>
+                            </div>
+
+                            <!-- Observações -->
+                            <div class="col-12">
+                                <label class="form-label">Observações Médicas / Gerais</label>
+                                <textarea class="form-control p-3" rows="3" name="Observações" placeholder="Digite aqui observações importantes..."></textarea>
+                            </div>
+
+                        </div>
+
+                        <!-- Botão de Envio -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-genesis">
+                                <i class="fa-solid fa-paper-plane me-2"></i> Finalizar Cadastro
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Rodapé -->
+            <div class="rodape">
+                <p class="m-0">&copy; 2026 ASLCOMPANY GROUP. Todos os direitos reservados.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
