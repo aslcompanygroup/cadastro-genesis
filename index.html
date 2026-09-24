@@ -83,6 +83,34 @@
             margin: 0;
         }
 
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dependent-box, .pet-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .dependent-title, .pet-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+
         .form-label {
             font-weight: 600;
             font-size: 0.875rem;
@@ -91,14 +119,14 @@
         }
 
         .input-group-text {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             border-right: none;
             color: var(--primary-blue);
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
         }
 
-        .form-control {
+        .form-control, .form-select {
             border-left: none;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
@@ -107,7 +135,7 @@
             border-color: #ced4da;
         }
 
-        .form-control:focus {
+        .form-control:focus, .form-select:focus {
             box-shadow: none;
             border-color: var(--secondary-blue);
         }
@@ -174,7 +202,6 @@
                 <!-- Formulário -->
                 <div class="card-body p-4 p-md-5">
 
-                    <!-- INSIRA SEU E-MAIL REAL ABAIXO -->
                     <form action="https://formsubmit.co/aslcompany.sa@gmail.com" method="POST">
 
                         <!-- Configurações para o FormSubmit -->
@@ -183,6 +210,37 @@
                         <input type="hidden" name="_template" value="table">
 
                         <div class="row g-3">
+
+                            <!-- SECÇÃO: ORIGEM DO CONTRATO -->
+                            <div class="col-12">
+                                <div class="section-title">
+                                    <i class="fa-solid fa-file-contract"></i> Origem do Contrato
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Origem do Contrato</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                                    <input type="text" class="form-control" name="Origem do Contrato" placeholder="Ex: Empresarial, Particular, Indicação">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Nome da Empresa</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-briefcase"></i></span>
+                                    <input type="text" class="form-control" name="Nome da Empresa" placeholder="Razão social ou Nome fantasia">
+                                </div>
+                            </div>
+
+
+                            <!-- SECÇÃO: DADOS DO TITULAR -->
+                            <div class="col-12">
+                                <div class="section-title">
+                                    <i class="fa-solid fa-user"></i> Dados do Titular
+                                </div>
+                            </div>
 
                             <!-- Nome Completo -->
                             <div class="col-12">
@@ -256,7 +314,123 @@
                                 </div>
                             </div>
 
-                            <!-- Observações -->
+
+                            <!-- SECÇÃO: DEPENDENTES -->
+                            <div class="col-12">
+                                <div class="section-title">
+                                    <i class="fa-solid fa-users"></i> Dependentes (Até 4)
+                                </div>
+                            </div>
+
+                            <!-- Dependente 1 -->
+                            <div class="col-12">
+                                <div class="dependent-box">
+                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 1</div>
+                                    <div class="row g-2">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" class="form-control" name="Dependente 1 - Nome" placeholder="Nome completo do dependente">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="date" class="form-control" name="Dependente 1 - Data Nasc">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" class="form-control" name="Dependente 1 - CPF" placeholder="CPF">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dependente 2 -->
+                            <div class="col-12">
+                                <div class="dependent-box">
+                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 2</div>
+                                    <div class="row g-2">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" class="form-control" name="Dependente 2 - Nome" placeholder="Nome completo do dependente">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="date" class="form-control" name="Dependente 2 - Data Nasc">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" class="form-control" name="Dependente 2 - CPF" placeholder="CPF">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dependente 3 -->
+                            <div class="col-12">
+                                <div class="dependent-box">
+                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 3</div>
+                                    <div class="row g-2">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" class="form-control" name="Dependente 3 - Nome" placeholder="Nome completo do dependente">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="date" class="form-control" name="Dependente 3 - Data Nasc">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" class="form-control" name="Dependente 3 - CPF" placeholder="CPF">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dependente 4 -->
+                            <div class="col-12">
+                                <div class="dependent-box">
+                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 4</div>
+                                    <div class="row g-2">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" class="form-control" name="Dependente 4 - Nome" placeholder="Nome completo do dependente">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="date" class="form-control" name="Dependente 4 - Data Nasc">
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" class="form-control" name="Dependente 4 - CPF" placeholder="CPF">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- SECÇÃO: ANIMAIS DE ESTIMAÇÃO -->
+                            <div class="col-12">
+                                <div class="section-title">
+                                    <i class="fa-solid fa-paw"></i> Animais de Estimação (Até 3)
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="pet-box">
+                                    <div class="pet-title"><i class="fa-solid fa-dog me-1"></i> Animal 1</div>
+                                    <input type="text" class="form-control" name="Animal 1 - Nome" placeholder="Nome do animal">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="pet-box">
+                                    <div class="pet-title"><i class="fa-solid fa-cat me-1"></i> Animal 2</div>
+                                    <input type="text" class="form-control" name="Animal 2 - Nome" placeholder="Nome do animal">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="pet-box">
+                                    <div class="pet-title"><i class="fa-solid fa-paw me-1"></i> Animal 3</div>
+                                    <input type="text" class="form-control" name="Animal 3 - Nome" placeholder="Nome do animal">
+                                </div>
+                            </div>
+
+
+                            <!-- SECÇÃO: OBSERVAÇÕES -->
+                            <div class="col-12">
+                                <div class="section-title">
+                                    <i class="fa-solid fa-comment-medical"></i> Observações
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <label class="form-label">Observações Médicas / Gerais</label>
                                 <textarea class="form-control p-3" rows="3" name="Observações" placeholder="Digite aqui observações importantes..."></textarea>
