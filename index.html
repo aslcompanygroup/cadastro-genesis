@@ -93,7 +93,7 @@
             border-bottom: 2px solid #e9ecef;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
         }
 
         .dependent-box, .pet-box {
@@ -102,13 +102,55 @@
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dependent-header, .pet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .dependent-title, .pet-title {
             font-weight: 600;
             font-size: 0.9rem;
             color: var(--secondary-blue);
-            margin-bottom: 10px;
+        }
+
+        .btn-remove {
+            color: #dc3545;
+            background: none;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .btn-remove:hover {
+            text-decoration: underline;
+        }
+
+        .btn-add {
+            background-color: #eef2ff;
+            color: var(--secondary-blue);
+            border: 1px dashed var(--secondary-blue);
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-add:hover {
+            background-color: var(--secondary-blue);
+            color: #ffffff;
         }
 
         .form-label {
@@ -126,7 +168,7 @@
             border-bottom-left-radius: 10px;
         }
 
-        .form-control, .form-select {
+        .form-control {
             border-left: none;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
@@ -135,7 +177,7 @@
             border-color: #ced4da;
         }
 
-        .form-control:focus, .form-select:focus {
+        .form-control:focus {
             box-shadow: none;
             border-color: var(--secondary-blue);
         }
@@ -214,7 +256,7 @@
                             <!-- SECÇÃO: ORIGEM DO CONTRATO -->
                             <div class="col-12">
                                 <div class="section-title">
-                                    <i class="fa-solid fa-file-contract"></i> Origem do Contrato
+                                    <span><i class="fa-solid fa-file-contract me-2"></i> Origem do Contrato</span>
                                 </div>
                             </div>
 
@@ -238,7 +280,7 @@
                             <!-- SECÇÃO: DADOS DO TITULAR -->
                             <div class="col-12">
                                 <div class="section-title">
-                                    <i class="fa-solid fa-user"></i> Dados do Titular
+                                    <span><i class="fa-solid fa-user me-2"></i> Dados do Titular</span>
                                 </div>
                             </div>
 
@@ -318,116 +360,37 @@
                             <!-- SECÇÃO: DEPENDENTES -->
                             <div class="col-12">
                                 <div class="section-title">
-                                    <i class="fa-solid fa-users"></i> Dependentes (Até 4)
+                                    <span><i class="fa-solid fa-users me-2"></i> Dependentes (Até 4)</span>
+                                    <button type="button" class="btn-add" id="btn-add-dependent">
+                                        <i class="fa-solid fa-plus me-1"></i> Adicionar Dependente
+                                    </button>
                                 </div>
                             </div>
 
-                            <!-- Dependente 1 -->
-                            <div class="col-12">
-                                <div class="dependent-box">
-                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 1</div>
-                                    <div class="row g-2">
-                                        <div class="col-12 col-md-6">
-                                            <input type="text" class="form-control" name="Dependente 1 - Nome" placeholder="Nome completo do dependente">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="date" class="form-control" name="Dependente 1 - Data Nasc">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="text" class="form-control" name="Dependente 1 - CPF" placeholder="CPF">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Dependente 2 -->
-                            <div class="col-12">
-                                <div class="dependent-box">
-                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 2</div>
-                                    <div class="row g-2">
-                                        <div class="col-12 col-md-6">
-                                            <input type="text" class="form-control" name="Dependente 2 - Nome" placeholder="Nome completo do dependente">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="date" class="form-control" name="Dependente 2 - Data Nasc">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="text" class="form-control" name="Dependente 2 - CPF" placeholder="CPF">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Dependente 3 -->
-                            <div class="col-12">
-                                <div class="dependent-box">
-                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 3</div>
-                                    <div class="row g-2">
-                                        <div class="col-12 col-md-6">
-                                            <input type="text" class="form-control" name="Dependente 3 - Nome" placeholder="Nome completo do dependente">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="date" class="form-control" name="Dependente 3 - Data Nasc">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="text" class="form-control" name="Dependente 3 - CPF" placeholder="CPF">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Dependente 4 -->
-                            <div class="col-12">
-                                <div class="dependent-box">
-                                    <div class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente 4</div>
-                                    <div class="row g-2">
-                                        <div class="col-12 col-md-6">
-                                            <input type="text" class="form-control" name="Dependente 4 - Nome" placeholder="Nome completo do dependente">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="date" class="form-control" name="Dependente 4 - Data Nasc">
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <input type="text" class="form-control" name="Dependente 4 - CPF" placeholder="CPF">
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-12" id="dependents-container">
+                                <!-- Os campos de dependentes aparecem dinamicamente aqui via JavaScript -->
                             </div>
 
 
                             <!-- SECÇÃO: ANIMAIS DE ESTIMAÇÃO -->
                             <div class="col-12">
                                 <div class="section-title">
-                                    <i class="fa-solid fa-paw"></i> Animais de Estimação (Até 3)
+                                    <span><i class="fa-solid fa-paw me-2"></i> Animais de Estimação (Até 3)</span>
+                                    <button type="button" class="btn-add" id="btn-add-pet">
+                                        <i class="fa-solid fa-plus me-1"></i> Adicionar Animal
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-4">
-                                <div class="pet-box">
-                                    <div class="pet-title"><i class="fa-solid fa-dog me-1"></i> Animal 1</div>
-                                    <input type="text" class="form-control" name="Animal 1 - Nome" placeholder="Nome do animal">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="pet-box">
-                                    <div class="pet-title"><i class="fa-solid fa-cat me-1"></i> Animal 2</div>
-                                    <input type="text" class="form-control" name="Animal 2 - Nome" placeholder="Nome do animal">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="pet-box">
-                                    <div class="pet-title"><i class="fa-solid fa-paw me-1"></i> Animal 3</div>
-                                    <input type="text" class="form-control" name="Animal 3 - Nome" placeholder="Nome do animal">
-                                </div>
+                            <div class="col-12" id="pets-container">
+                                <!-- Os campos de pets aparecem dinamicamente aqui via JavaScript -->
                             </div>
 
 
                             <!-- SECÇÃO: OBSERVAÇÕES -->
                             <div class="col-12">
                                 <div class="section-title">
-                                    <i class="fa-solid fa-comment-medical"></i> Observações
+                                    <span><i class="fa-solid fa-comment-medical me-2"></i> Observações</span>
                                 </div>
                             </div>
 
@@ -462,6 +425,93 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script de Controle Dinâmico -->
+<script>
+    let dependentCount = 0;
+    const maxDependents = 4;
+
+    let petCount = 0;
+    const maxPets = 3;
+
+    // Gerenciador de Dependentes
+    document.getElementById('btn-add-dependent').addEventListener('click', function() {
+        if (dependentCount < maxDependents) {
+            dependentCount++;
+            const container = document.getElementById('dependents-container');
+            const div = document.createElement('div');
+            div.className = 'dependent-box';
+            div.id = `dependent-box-${dependentCount}`;
+            div.innerHTML = `
+                <div class="dependent-header">
+                    <span class="dependent-title"><i class="fa-solid fa-user-plus me-1"></i> Dependente ${dependentCount}</span>
+                    <button type="button" class="btn-remove" onclick="removeDependent(${dependentCount})"><i class="fa-solid fa-trash me-1"></i>Remover</button>
+                </div>
+                <div class="row g-2">
+                    <div class="col-12 col-md-6">
+                        <input type="text" class="form-control" name="Dependente ${dependentCount} - Nome" placeholder="Nome completo do dependente" required>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <input type="date" class="form-control" name="Dependente ${dependentCount} - Data Nasc" required>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <input type="text" class="form-control" name="Dependente ${dependentCount} - CPF" placeholder="CPF" required>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+
+            if (dependentCount === maxDependents) {
+                this.style.display = 'none';
+            }
+        }
+    });
+
+    function removeDependent(id) {
+        const box = document.getElementById(`dependent-box-${id}`);
+        if (box) {
+            box.remove();
+            dependentCount--;
+            document.getElementById('btn-add-dependent').style.display = 'inline-block';
+        }
+    }
+
+    // Gerenciador de Pets
+    document.getElementById('btn-add-pet').addEventListener('click', function() {
+        if (petCount < maxPets) {
+            petCount++;
+            const container = document.getElementById('pets-container');
+            const div = document.createElement('div');
+            div.className = 'pet-box';
+            div.id = `pet-box-${petCount}`;
+            div.innerHTML = `
+                <div class="pet-header">
+                    <span class="pet-title"><i class="fa-solid fa-paw me-1"></i> Animal ${petCount}</span>
+                    <button type="button" class="btn-remove" onclick="removePet(${petCount})"><i class="fa-solid fa-trash me-1"></i>Remover</button>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="Animal ${petCount} - Nome" placeholder="Nome do animal" required>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+
+            if (petCount === maxPets) {
+                this.style.display = 'none';
+            }
+        }
+    });
+
+    function removePet(id) {
+        const box = document.getElementById(`pet-box-${id}`);
+        if (box) {
+            box.remove();
+            petCount--;
+            document.getElementById('btn-add-pet').style.display = 'inline-block';
+        }
+    }
+</script>
 
 </body>
 </html>
